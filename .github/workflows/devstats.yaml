@@ -7,7 +7,7 @@ on:
       - v*
 
 jobs:
-  build-devstats:
+  devstats-query:
     runs-on: ubuntu-latest
     steps:
       - uses: stefanv/devstats-download-action@main

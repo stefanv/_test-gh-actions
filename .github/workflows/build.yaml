@@ -1,4 +1,4 @@
-name: Build book
+name: Query devstats
 
 on:
   push:
@@ -7,18 +7,11 @@ on:
       - v*
 
 jobs:
-  build-book:
+  build-devstats:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Set edition prefix
-        run: |
-          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
-              echo "EDITION_PREFIX=" >> $GITHUB_ENV
-          else
-              echo "EDITION_PREFIX=${{ github.ref_name }}/" >> $GITHUB_ENV
-          fi
-
-      - name: Test variable
-        run: |
-          echo "https://my-site.org/${EDITION_PREFIX}book"
+      - uses: stefanv/devstats-download-action@main
+        with:
+          repo: scientific-python/spin
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact-name: devstats-spin

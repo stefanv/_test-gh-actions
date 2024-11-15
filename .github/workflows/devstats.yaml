@@ -15,5 +15,4 @@ jobs:
           repos: |
             - scientific-python/spin
             - scientific-python/lazy-loader
-          token: ${{ secrets.GITHUB_TOKEN }}
           artifact-name: devstats-spin

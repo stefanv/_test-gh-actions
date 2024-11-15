@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: stefanv/devstats-download-action@main
         with:
-          repos: [scientific-python/spin]
+          repos: >-
+            [scientific-python/spin]
           token: ${{ secrets.GITHUB_TOKEN }}
           artifact-name: devstats-spin

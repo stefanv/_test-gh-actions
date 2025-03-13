@@ -14,10 +14,10 @@ jobs:
   job-that-fails:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Step that fails
         run:
           exit 1
-
       - name: Job has failed
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
         uses: JasonEtco/create-an-issue@v2

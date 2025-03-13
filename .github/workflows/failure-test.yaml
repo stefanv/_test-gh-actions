@@ -1,0 +1,27 @@
+name: Test failed job reporter
+
+on:
+  push:
+    branches:
+      - main
+      - v*
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  job-that-fails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step that fails
+        run:
+          exit 1
+
+      - name: Job has failed
+        if: ${{ failure() && github.ref == 'refs/heads/main' }}
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/main-fail-template.md

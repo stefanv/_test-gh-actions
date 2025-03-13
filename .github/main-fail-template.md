@@ -1,5 +1,5 @@
 ---
-title: "⚠ CI failure on `main`"
+title: "⚠ {{ env.BUILD_TYPE }} CI failure on `main`"
 labels: "CI failure"
 ---
 

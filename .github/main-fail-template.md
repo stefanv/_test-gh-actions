@@ -1,6 +1,6 @@
 ---
-title: "CI failure: main {{ github.sha }}"
+title: "CI failure: {{ tools.context.sha }} on `main`"
 labels: "CI failure"
 ---
 
-[Test failure on main]({{ github.server_url }}/{{ github.repository }}/actions/runs/{{ github.run_id }}) while testing {{ github.sha }} by @{{ payload.sender.login }}
+Commit {{ tools.context.sha }} by @{{ tools.context.actor }} did not pass CI.

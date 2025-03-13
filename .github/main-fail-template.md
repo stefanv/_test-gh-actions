@@ -1,6 +1,6 @@
 ---
-title: "CI failure: {{ tools.context.sha }} on `main`"
+title: "CI failure: {{ sha }} on `main`"
 labels: "CI failure"
 ---
 
-Commit {{ tools.context.sha }} by @{{ tools.context.actor }} did not pass CI.
+Commit {{ sha }} by @{{ payload.sender.login }} did not pass CI.

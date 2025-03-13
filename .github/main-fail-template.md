@@ -1,5 +1,5 @@
 ---
-title: CI failure: main ${{ github.sha }}
+title: "CI failure: main ${{ github.sha }}"
 labels: "CI failure"
 ---
 

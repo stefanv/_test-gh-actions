@@ -18,7 +18,7 @@ jobs:
       - name: Step that fails
         run:
           exit 1
-      - name: Job has failed
+      - name: "Job has failed: reporting"
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
         uses: JasonEtco/create-an-issue@v2
         env:
